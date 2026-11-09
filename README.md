@@ -1,6 +1,6 @@
 # TradeInfo Mock App
 
-Simple mock app with visitable routes and lightweight backend wiring.
+Mock backend plus React + Vite PWA frontend.
 
 ## 1) Setup
 
@@ -10,7 +10,17 @@ cp .env.mock .env
 npm start
 ```
 
-App runs at `http://localhost:3000` by default.
+Backend runs at `http://localhost:3000` by default.
+
+### Frontend PWA
+
+```bash
+npm --prefix frontend install
+npm run frontend:dev
+```
+
+Frontend runs at `http://localhost:5173` by default.
+The Vite dev server proxies `/api/*` to the backend at `http://localhost:3000`.
 
 ## 2) Main Visitable Routes
 
@@ -60,3 +70,18 @@ All default settings are in `.env.mock`, including:
 - drop cadence + bidding defaults
 - placeholder crypto integration fields for your old app
 - wallet requirements, treasury addresses, and chain confirmation defaults
+
+## 5) Frontend PWA Routes
+
+The PWA shell has visitable client routes matching the backend mock pages:
+- `/`
+- `/campaigns`
+- `/campaigns/new`
+- `/wallet`
+- `/wallet/collection`
+- `/wallet/compile`
+- `/wallet/credits`
+- `/account/register`
+- `/payments/deposit`
+- `/leaderboard`
+- `/admin`
